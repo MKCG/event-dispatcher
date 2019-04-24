@@ -12,48 +12,48 @@ Generated events are then dispatched to the appropriate **listeners**.
 
 ### As a callback
 
-`
+```
 $dispatcher->addListener('event_type_a', function () {
 });
-`
+```
 
 ### As an array
 
-`
+```
 $foo = new \Foo();
 $dispatcher->addListener('event_type_a', [$foo, 'method_name']);
-`
+```
 
 ### How to dispatch an event ?
 
 #### Listeners can dispatch no events
-`
+```
 $dispatcher->addListener('event_type_a', function () {
 });
-`
+```
 
 #### Events can be dispatched with a return statement
-`
+```
 $dispatcher->addListener('event_type_a', function () {
     // do something
     return new Event('event_type_b', ['payload' => [], 'context' => []]);
 });
-`
+```
 
 #### Events can be dispatched with a yield statement
 
-`
+```
 $dispatcher->addListener('event_type_a', function () {
     // do something
     for ($i = 0; $i < 10; $i++) {
         yield new Event('counted', ['count' => $i]);
     }
 });
-`
+```
 
 #### Events can be dispatched with a yield and a return statement in the same listener
 
-`
+```
 $dispatcher->addListener('event_type_a', function () {
     // do something
     for ($i = 0; $i < 10; $i++) {
@@ -61,7 +61,7 @@ $dispatcher->addListener('event_type_a', function () {
     }
     return new Event('finalized', ['count' => $i]);
 });
-`
+```
 
 ## How to inject parameters into listeners ?
 
