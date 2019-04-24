@@ -1,0 +1,14 @@
+{
+    "name": "mkcg/event-dispatcher",
+    "authors": [
+        {
+            "name": "Kévin Masseix"
+        }
+    ],
+    "description": "Generator based event dispatcher",
+    "autoload": {
+        "psr-4": {
+            "MKCG\\Event\\": "src"
+        }
+    }
+}
